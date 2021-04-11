@@ -9,13 +9,8 @@
  *
  */
 function getEmailDomain(email) {
-  let index = 0;
-  for (let i = 0; i < email.length; i++) {
-    if (email[i] === '@') {
-      index = i + 1;
-    }
-  }
-  return email.substr(index, email.length - 1);
+  const arr = email.split('@');
+  return arr[arr.length - 1];
 }
 
 module.exports = getEmailDomain;
