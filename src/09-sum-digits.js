@@ -14,16 +14,15 @@ function getSumOfDigits(n) {
   const arr = String(n).split('');
   let sum = 0;
 
-  if (n > 90 && n < 100) {
-    for (let i = 1; i < arr.length; i++) {
-      sum += Number(arr[i]);
-    }
-  } else {
-    for (let i = 0; i < arr.length; i++) {
-      sum += Number(arr[i]);
-    }
+  for (let i = 0; i < arr.length; i++) {
+    sum += Number(arr[i]);
   }
-  return sum;
+
+  if (sum < 10) {
+    return sum;
+  }
+
+  return getSumOfDigits(sum);
 }
 
 module.exports = getSumOfDigits;
